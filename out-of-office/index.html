@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Out of Office — יום גיבוש על אופניים | DINAMO × BIKING</title>
+<meta name="description" content="ימי גיבוש ורכיבת אופניים לצוותי הייטק. מסלול מותאם, מדריכים מוסמכים, אופניים, רכב שטח מלווה ואתגרי צוות בשטח — בכל הארץ.">
+<meta property="og:title" content="היום הכי טוב של הרבעון יקרה על שביל עפר">
+<meta property="og:description" content="ימי גיבוש ורכיבת אופניים לצוותי הייטק — DINAMO × BIKING">
+<meta property="og:image" content="img/d-wide.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#15130f;
+  --night-2:#1f1c17;
+  --sand:#f4ecdd;
+  --sand-2:#e9dec9;
+  --ink:#1d1a15;
+  --mute:#6d6456;
+  --sun:#e0a63e;
+  --sun-deep:#b9801f;
+  --blue:#316bb3;
+  --line-dark:rgba(244,236,221,.14);
+  --line-light:rgba(29,26,21,.12);
+  --display:"Frank Ruhl Libre", serif;
+  --body:"Assistant", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--sand);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+
+/* ---------- top bar ---------- */
+.bar{position:absolute;inset:0 0 auto 0;z-index:5;padding:22px 0}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brands{display:flex;align-items:center;gap:16px;background:var(--sand);color:var(--ink);padding:10px 18px;border-radius:14px;box-shadow:0 10px 30px -14px rgba(0,0,0,.55)}
+.brands img.dn{height:34px;width:auto}
+.brands img.bk{height:50px;width:auto}
+.brands .x{font-family:var(--mono);font-size:14px;color:var(--mute)}
+.bar-cta{font-weight:700;font-size:15px;text-decoration:none;padding:10px 18px;border:1px solid rgba(244,236,221,.4);border-radius:999px;backdrop-filter:blur(6px);background:rgba(21,19,15,.25);transition:background .2s,border-color .2s}
+.bar-cta:hover{background:rgba(21,19,15,.55);border-color:var(--sand)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:flex-end;isolation:isolate}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;z-index:-2;transform:scale(1.04);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(270deg,rgba(21,19,15,.62) 0%,rgba(21,19,15,.25) 45%,rgba(21,19,15,0) 70%),linear-gradient(180deg,rgba(21,19,15,.5) 0%,rgba(21,19,15,0) 26%,rgba(21,19,15,0) 50%,rgba(21,19,15,.8) 80%,var(--night) 100%)}
+@keyframes settle{to{transform:scale(1)}}
+.hero-copy{padding:0 0 120px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--sun);margin-bottom:22px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 0 rgba(224,166,62,.6);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(224,166,62,0)}100%{box-shadow:0 0 0 0 rgba(224,166,62,0)}}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(44px,7.4vw,104px);line-height:.98;letter-spacing:-.01em;max-width:13ch;text-wrap:balance}
+h1 em{font-style:normal;color:var(--sun)}
+.lede{margin-top:26px;font-size:clamp(18px,1.7vw,22px);max-width:44ch;color:rgba(244,236,221,.86)}
+.actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:17px;text-decoration:none;padding:16px 28px;border-radius:999px;transition:transform .18s cubic-bezier(.2,.7,.2,1),background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-sun{background:var(--sun);color:var(--night);box-shadow:0 10px 30px -10px rgba(224,166,62,.7)}
+.btn-sun:hover{background:#ebb352}
+.btn-ghost{color:var(--sand);border:1px solid rgba(244,236,221,.35)}
+.btn-ghost:hover{border-color:var(--sand)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- auto-reply card ---------- */
+.ooo{position:relative;z-index:3;margin-top:-64px}
+.ooo-card{background:var(--sand);color:var(--ink);border-radius:18px;padding:26px 30px;max-width:640px;margin-inline-start:auto;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);font-size:16px}
+.ooo-head{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12px;color:var(--mute);border-bottom:1px solid var(--line-light);padding-bottom:12px;margin-bottom:14px;direction:ltr}
+.ooo-head b{color:var(--ink);font-weight:500}
+.ooo-card p{line-height:1.65}
+.ooo-card p + p{margin-top:8px;color:var(--mute)}
+
+/* ---------- sections ---------- */
+section{padding:120px 0}
+.paper{background:var(--sand);color:var(--ink)}
+.kicker{font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--sun-deep);margin-bottom:16px}
+.dark .kicker{color:var(--sun)}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(34px,4.6vw,62px);line-height:1.04;max-width:18ch;text-wrap:balance}
+
+/* day: three moments */
+.day{background:var(--sand);color:var(--ink);padding-top:150px}
+.day-grid{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.moment figure{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--sand-2)}
+.moment img,.moment video{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.moment:hover img,.moment:hover video{transform:scale(1.04)}
+.moment .num{position:absolute;top:14px;inset-inline-start:14px;font-family:var(--mono);font-size:12px;background:rgba(21,19,15,.72);color:var(--sand);padding:6px 10px;border-radius:999px;direction:ltr}
+.moment h3{font-family:var(--display);font-weight:700;font-size:30px;margin-top:22px}
+.moment p{color:var(--mute);margin-top:6px;max-width:34ch}
+.moment:nth-child(2){margin-top:56px}
+
+/* full-bleed band */
+.band{position:relative;overflow:hidden;min-height:88svh;display:flex;align-items:center;isolation:isolate;padding:0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:-2}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(270deg,rgba(21,19,15,.82) 0%,rgba(21,19,15,.35) 48%,rgba(21,19,15,0) 70%)}
+.band blockquote{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,70px);line-height:1.05;max-width:12ch;text-wrap:balance}
+.band blockquote span{color:var(--sun)}
+.band cite{display:block;margin-top:22px;font-style:normal;font-size:15px;color:rgba(244,236,221,.7)}
+
+/* included */
+.inc{display:grid;grid-template-columns:1fr 1.25fr;gap:64px;align-items:start}
+.inc-list{list-style:none;border-top:1px solid var(--line-dark)}
+.inc-list li{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:22px 0;border-bottom:1px solid var(--line-dark)}
+.inc-list .i{font-family:var(--mono);font-size:13px;color:var(--sun);padding-top:5px;direction:ltr;text-align:start}
+.inc-list b{display:block;font-size:20px;font-weight:700}
+.inc-list span{color:rgba(244,236,221,.68);font-size:16px}
+.inc-photo{margin-top:40px;border-radius:16px;overflow:hidden;aspect-ratio:4/5}
+.inc-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+
+/* partners */
+.duo{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.partner{background:#fffaf1;color:var(--ink);border:1px solid var(--line-light);border-radius:18px;padding:36px;display:flex;flex-direction:column;gap:18px;min-height:340px}
+.partner .logo{height:84px;display:flex;align-items:center}
+.partner .logo img{max-height:100%;width:auto}
+.partner .logo img.dn{height:46px}
+.partner h3{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.15}
+.partner p{color:var(--mute);font-size:17px}
+.partner .tag{margin-top:auto;font-weight:700;font-size:14px;color:var(--sun-deep);padding-top:16px;border-top:1px solid var(--line-light)}
+.partner a.tag{text-decoration:none}
+.partner a.tag:hover{text-decoration:underline}
+
+/* final */
+.final{position:relative;overflow:hidden;isolation:isolate;min-height:100svh;display:flex;align-items:center;text-align:center;padding:120px 0}
+.final > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.final::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 50%,rgba(21,19,15,.42),rgba(21,19,15,.7) 80%)}
+.final h2{margin-inline:auto;max-width:16ch;font-size:clamp(38px,5.6vw,76px)}
+.final p{margin:22px auto 0;max-width:46ch;color:rgba(244,236,221,.85);font-size:20px}
+.final .actions{justify-content:center}
+
+footer{padding:40px 0 48px;border-top:1px solid var(--line-dark)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px;color:rgba(244,236,221,.55)}
+footer .brands img.dn{height:26px}
+footer .brands img.bk{height:36px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero > img{animation:none;transform:none}
+  .eyebrow .dot{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- mobile ---------- */
+@media (max-width:860px){
+  body{font-size:17px}
+  section{padding:84px 0}
+  .bar{padding:16px 0}
+  .brands{gap:12px}
+  .brands{padding:8px 14px;gap:10px}
+  .brands img.dn{height:24px}
+  .brands img.bk{height:38px}
+  .bar-cta{display:none}
+  .hero > img{object-position:30% 50%}
+  .hero-copy{padding-bottom:96px}
+  .actions .btn{width:100%;justify-content:center}
+  .ooo{margin-top:-48px}
+  .ooo-card{padding:22px 20px}
+  .day{padding-top:110px}
+  .day-grid{grid-template-columns:1fr;gap:44px;margin-top:44px}
+  .moment:nth-child(2){margin-top:0}
+  .band{min-height:78svh;align-items:flex-end;padding-bottom:56px}
+  .band::after{background:linear-gradient(0deg,rgba(21,19,15,.88) 0%,rgba(21,19,15,.2) 55%,rgba(21,19,15,0) 75%)}
+  .inc{grid-template-columns:1fr;gap:36px}
+  .inc-photo{display:none}
+  .duo{grid-template-columns:1fr}
+  .partner{padding:28px;min-height:0}
+}
+
+/* phone polish */
+.swipe{display:none}
+@media (max-width:860px){
+  .hero::after{background:linear-gradient(0deg,var(--night) 0%,rgba(21,19,15,.92) 34%,rgba(21,19,15,.55) 58%,rgba(21,19,15,.15) 78%,rgba(21,19,15,.35) 100%)}
+  h1{font-size:46px}
+  .lede{font-size:18px}
+  .ooo-head{flex-direction:column;gap:2px}
+  .day-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .day-grid::-webkit-scrollbar{display:none}
+  .moment{flex:0 0 80%;scroll-snap-align:center}
+  .moment h3{font-size:25px;margin-top:16px}
+  .moment p{font-size:16px}
+  .swipe{display:block;margin-top:14px;font-size:15px;font-weight:700;color:var(--sun-deep)}
+  .band blockquote{font-size:38px}
+  .partner h3{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <div class="brands" aria-label="DINAMO × BIKING">
+      <img class="dn" src="img/logo-dinamo.png" alt="DINAMO — הדרכות רכיבה">
+      <span class="x">×</span>
+      <img class="bk" src="img/logo-biking.png" alt="BIKING — מרכז לרכיבת אופניים">
+    </div>
+    <a class="bar-cta" href="#plan">לתכנן יום גיבוש</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" style="padding:0">
+    <img src="img/d-wide.jpg" alt="רוכבים מחייכים בשביל לאורך שדה ירוק ויער" fetchpriority="high">
+    <div class="wrap hero-copy">
+      <div class="eyebrow rv"><span class="dot"></span><span dir="ltr" style="font-family:var(--mono);font-weight:500;font-size:13px">OUT OF OFFICE</span> · יום גיבוש על אופניים</div>
+      <h1 class="rv d1">היום הכי טוב של הרבעון יקרה <em>על שביל עפר.</em></h1>
+      <p class="lede rv d2">ימי גיבוש ורכיבת אופניים לצוותי הייטק. אנחנו בונים את המסלול, מביאים אופניים, ציוד ומדריכים. אתם רק מגיעים.</p>
+      <div class="actions rv d3">
+        <a class="btn btn-sun" href="#plan">בואו נתכנן את היום שלכם
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#day">איך נראה יום כזה</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTO-REPLY -->
+  <div class="ooo">
+    <div class="wrap">
+      <div class="ooo-card rv">
+        <div class="ooo-head"><span><b>Automatic reply:</b> Re: Q4 planning</span><span>09:00 – 15:00</span></div>
+        <p><strong>היי, אני מחוץ למשרד היום.</strong> כל הצוות רוכב בין כרמים ויערות, פותר אתגרים בשטח ונהנה מהנוף.</p>
+        <p>נחזור מחר עם הרבה אנרגיה, כמה סיפורים טובים וצוות קצת יותר מגובש.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE DAY -->
+  <section class="day" id="day">
+    <div class="wrap">
+      <div class="kicker rv">היום עצמו</div>
+      <h2 class="rv d1">שלושה דברים שקורים כשצוות יוצא לשטח ביחד</h2>
+      <p class="swipe">החליקו לצד ←</p>
+      <div class="day-grid">
+        <article class="moment rv">
+          <figure><img src="img/d-ridge.jpg" alt="שורת רוכבים מהצוות על רכס, נוף פתוח מאחור" loading="lazy"><span class="num">01</span></figure>
+          <h3>רוכבים ביחד</h3>
+          <p>מסלול שנבנה לפי הרמה של הצוות שלכם: מתאים לרוכבים ותיקים וגם למי שעולה על אופניים בפעם הראשונה מאז התיכון.</p>
+        </article>
+        <article class="moment rv d1">
+          <figure><video class="vid" src="img/hoop.mp4" poster="img/hoop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון מיום הגיבוש"></video><span class="num">02</span></figure>
+          <h3>פותרים ביחד</h3>
+          <p>בין המקטעים מחכים אתגרי צוות בשטח, עם חישוקים, חבלים והמון צחוק, ובכל אחד מהם רואים איך הצוות עובד.</p>
+        </article>
+        <article class="moment rv d2">
+          <figure><img src="img/d-fields.jpg" alt="רוכבים בשביל בין שדה ירוק ליער אורנים" loading="lazy"><span class="num">03</span></figure>
+          <h3>נושמים נוף</h3>
+          <p>כרמים, יערות ושבילים פתוחים. מסלולים בכל רחבי הארץ, כך שנמצא אחד קרוב אליכם.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAND -->
+  <section class="band">
+    <img src="img/d-smile.jpg" alt="רוכבת מחייכת חיוך רחב על שביל" loading="lazy">
+    <div class="wrap">
+      <blockquote class="rv">החיוך הזה <span>נשאר גם בספרינט הבא.</span></blockquote>
+      <cite class="rv d1">— מתוך יום גיבוש אמיתי של חברת הייטק</cite>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section class="dark">
+    <div class="wrap inc">
+      <div>
+        <div class="kicker rv">הכל כלול</div>
+        <h2 class="rv d1">אתם מביאים את הצוות. כל השאר עלינו.</h2>
+        <div class="inc-photo rv d2"><img src="img/d-group.jpg" alt="הצוות מתכנס לפני היציאה לרכיבה" loading="lazy"></div>
+      </div>
+      <ul class="inc-list">
+        <li class="rv"><span class="i">01</span><div><b>מסלול לפי המידות שלכם</b><span>אורך, קושי ואזור לפי גודל הצוות והרמה. בכל הארץ.</span></div></li>
+        <li class="rv"><span class="i">02</span><div><b>מדריכים מוסמכים</b><span>מדריכת רכיבת הרים מקצועית ומורת דרך מוסמכת מובילה את היום מתחילתו ועד סופו.</span></div></li>
+        <li class="rv"><span class="i">03</span><div><b>אופניים, קסדות וציוד</b><span>כולם מגיעים בבגדים נוחים, והציוד כבר מחכה מכויל.</span></div></li>
+        <li class="rv"><span class="i">04</span><div><b>רכב שטח מלווה</b><span>ליווי צמוד לאורך כל המסלול, עם ציוד ביטחון ועזרה ראשונה.</span></div></li>
+        <li class="rv"><span class="i">05</span><div><b>אתגרי צוות בשטח</b><span>פעילויות גיבוש מובנות בין מקטעי הרכיבה.</span></div></li>
+        <li class="rv"><span class="i">06</span><div><b>מותאם לכל צוות</b><span>גם לציבור הדתי והחרדי, ולכל הרכב גילאים ורמות כושר.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="paper">
+    <div class="wrap">
+      <div class="kicker rv">מי אנחנו</div>
+      <h2 class="rv d1">שני עסקי רכיבה, יום אחד מושלם</h2>
+      <div class="duo">
+        <article class="partner rv">
+          <div class="logo"><img class="dn" src="img/logo-dinamo.png" alt="DINAMO"></div>
+          <h3>דינה גבאי · DINAMO</h3>
+          <p>מדריכת רכיבת הרים מקצועית ומורת דרך מוסמכת. מובילה מסגרות הדרכה שבועיות, סיורי רכיבה וקבוצות מכל הגילאים, ויודעת לקחת צוות שלם ולהפוך אותו לקבוצה.</p>
+          <span class="tag">הדרכה · מסלולים · חוויה</span>
+        </article>
+        <article class="partner rv d1">
+          <div class="logo"><img class="bk" src="img/logo-biking.png" alt="BIKING"></div>
+          <h3>אוהד · BIKING</h3>
+          <p>מרכז לרכיבת אופניים לקבוצות, משפחות, מוסדות וחברות. צי אופניים, רכב שטח וציוד ביטחון. מאז 7.10 אוהד גם מילואימניק עם יותר מ-600 ימי שירות, וכל יום גיבוש מחזק עסק של מילואימניק.</p>
+          <a class="tag" href="https://goodbiking.co.il/" target="_blank" rel="noopener">goodbiking.co.il ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="plan">
+    <img src="img/d-clouds.jpg" alt="רוכבים על שביל עפר מתחת לשמיים עם עננים" loading="lazy">
+    <div class="wrap">
+      <div class="kicker rv">לתכנן יום</div>
+      <h2 class="rv d1">שלחו תאריך וגודל צוות. את השאר נבנה אנחנו.</h2>
+      <p class="rv d2">נחזור אליכם עם הצעה למסלול, לוח זמנים ומחיר.</p>
+      <p class="rv d2" style="margin-top:10px;font-size:18px;color:var(--sun)">אפשר להוסיף בסוף הפעילות פריסת אוכל, מותאמת לתקציב החברה.</p>
+      <div class="actions rv d3">
+        <a class="btn btn-sun" href="https://wa.me/972585903093?text=%D7%94%D7%99%D7%99%20%D7%93%D7%99%D7%A0%D7%94%2C%20%D7%90%D7%A0%D7%97%D7%A0%D7%95%20%D7%A8%D7%95%D7%A6%D7%99%D7%9D%20%D7%9C%D7%AA%D7%9B%D7%A0%D7%9F%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%A2%D7%9C%20%D7%90%D7%95%D7%A4%D7%A0%D7%99%D7%99%D7%9D%20%D7%9C%D7%A6%D7%95%D7%95%D7%AA%20%D7%A9%D7%9C%D7%A0%D7%95.%20%D7%92%D7%95%D7%93%D7%9C%20%D7%94%D7%A6%D7%95%D7%95%D7%AA%3A%20%20%D7%AA%D7%90%D7%A8%D7%99%D7%9A%3A%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+          לדבר עם דינה בוואטסאפ
+        </a>
+        <a class="btn btn-ghost" href="https://did.li/J1dmC" target="_blank" rel="noopener">לדבר עם אוהד</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brands">
+      <img class="dn" src="img/logo-dinamo.png" alt="DINAMO">
+      <span class="x">×</span>
+      <img class="bk" src="img/logo-biking.png" alt="BIKING">
+    </div>
+    <span>ימי גיבוש ורכיבת אופניים לחברות · בכל הארץ</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})
+  },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

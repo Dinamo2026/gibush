@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יום אחד, מחוץ לזמן | DINAMO × BIKING</title>
+<meta name="description" content="יום גיבוש פרטי על אופניים לצוותי הייטק: מסלול שנתפר לצוות, הדרכה מוסמכת, ציוד ורכב שטח מלווה. DINAMO × BIKING.">
+<meta property="og:title" content="יום אחד, מחוץ לזמן">
+<meta property="og:image" content="img/d-fields.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f6f2ea;
+  --stone:#ebe4d6;
+  --paper:#fbf9f4;
+  --forest:#233021;
+  --forest-2:#2f3d2b;
+  --ink:#23271f;
+  --mute:#6f6f63;
+  --brass:#9a7838;
+  --rule:rgba(35,39,31,.16);
+  --serif:"Noto Sans Hebrew", system-ui, sans-serif;
+  --italic:"Noto Sans Hebrew", system-ui, sans-serif;
+  --sans:"Noto Sans Hebrew", system-ui, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+.narrow{width:min(720px,100% - 32px);margin-inline:auto}
+.latin{font-weight:500;font-size:12px;letter-spacing:.18em;color:var(--brass)}
+
+/* header */
+.top{padding:34px 0 0}
+.top .wrap{display:flex;flex-direction:column;align-items:center;gap:22px}
+.marks{display:flex;align-items:center;gap:28px}
+.marks img.dn{height:34px;width:auto}
+.marks img.bk{height:54px;width:auto}
+.marks .rule{width:1px;height:42px;background:var(--rule)}
+.top .rule-h{width:100%;height:1px;background:var(--rule)}
+
+/* hero */
+.hero{padding:72px 0 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.hero-grid .frame{margin:0;width:100%;aspect-ratio:4/5}
+.overline{font-size:13px;font-weight:500;letter-spacing:.22em;color:var(--brass)}
+h1{font-family:var(--serif);font-weight:200;font-size:clamp(46px,7.2vw,104px);line-height:1.04;letter-spacing:-.01em;margin-top:18px}
+.hero p.sub{max-width:36ch;margin:28px 0 0;color:var(--mute);font-size:19px}
+.frame{margin:72px auto 0;width:min(1240px,100% - 32px);aspect-ratio:21/9;overflow:hidden}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;transform:scale(1.08);transition:transform 2.6s cubic-bezier(.16,.8,.2,1)}
+.frame.in img{transform:scale(1)}
+.caption{width:min(1240px,100% - 32px);margin:14px auto 0;display:flex;justify-content:space-between;font-size:13px;color:var(--mute);letter-spacing:.02em}
+
+/* intro */
+.intro{padding:140px 0 120px}
+.intro .wrap{display:grid;grid-template-columns:200px 1fr;gap:56px;align-items:start}
+.label{font-size:13px;font-weight:500;letter-spacing:.14em;color:var(--brass);padding-top:14px;border-top:1px solid var(--brass)}
+.intro h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,46px);line-height:1.3;max-width:24ch}
+.intro p{margin-top:28px;max-width:56ch;color:var(--mute)}
+
+/* menu */
+.menu{background:var(--forest);color:var(--ivory);padding:130px 0}
+.menu-card{width:min(640px,100% - 32px);margin-inline:auto;text-align:center}
+.menu .overline{color:#c9a965}
+.menu h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.4vw,58px);margin-top:10px}
+.menu .note{font-size:14px;color:rgba(246,242,234,.6);margin-top:10px}
+.courses{list-style:none;margin-top:64px;text-align:right}
+.courses li{padding:26px 0;border-top:1px solid rgba(246,242,234,.16);display:grid;grid-template-columns:72px 1fr;gap:20px}
+.courses li:last-child{border-bottom:1px solid rgba(246,242,234,.16)}
+.courses .n{font-size:15px;font-weight:500;letter-spacing:.1em;padding-top:6px;color:#c9a965;line-height:1.2}
+.courses b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.3}
+.courses span{display:block;font-size:16px;color:rgba(246,242,234,.68);margin-top:4px}
+
+/* diptych */
+.diptych{padding:140px 0 0}
+.diptych .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.ph{overflow:hidden;background:var(--stone)}
+.ph img,.ph video{width:100%;height:100%;object-fit:cover;display:block}
+.ph.tall{aspect-ratio:4/5}
+.ph.mid{aspect-ratio:3/4;margin-bottom:120px}
+figcaption{margin-top:14px;font-size:14px;color:var(--mute)}
+figcaption .latin{display:block;margin-bottom:4px}
+
+/* quote */
+.quote{padding:150px 0}
+.quote blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.8vw,52px);line-height:1.3;text-align:center;max-width:22ch;margin-inline:auto}
+.quote .orn{display:block;margin:0 auto 34px;width:48px;height:1px;background:var(--brass)}
+
+/* details */
+.details{padding:0 0 140px}
+.details .head{display:grid;grid-template-columns:200px 1fr;gap:56px;margin-bottom:56px}
+.details h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,46px);line-height:1.25}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
+.grid3 div{padding:30px 28px 34px 0;border-bottom:1px solid var(--rule)}
+.grid3 div:not(:nth-child(3n)){border-left:1px solid var(--rule);padding-left:28px}
+.grid3 b{display:block;font-family:var(--serif);font-weight:400;font-size:21px}
+.grid3 span{display:block;margin-top:8px;font-size:16px;color:var(--mute)}
+
+/* band */
+.band{height:72vh;min-height:420px;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+
+/* hosts */
+.hosts{padding:140px 0}
+.hosts .head{text-align:center}
+.hosts h2{font-family:var(--serif);font-weight:300;font-size:clamp(34px,4vw,54px);margin-top:10px}
+.pair{margin-top:72px;display:grid;grid-template-columns:1fr 1px 1fr;gap:64px}
+.pair .sep{background:var(--rule)}
+.host{text-align:center}
+.host .logo{height:96px;display:flex;align-items:center;justify-content:center}
+.host .logo img.dn{height:44px}
+.host .logo img.bk{height:92px}
+.host h3{font-family:var(--serif);font-weight:400;font-size:24px;margin-top:26px}
+.host p{color:var(--mute);margin-top:12px;max-width:38ch;margin-inline:auto;font-size:17px}
+.host a{display:inline-block;margin-top:16px;font-size:14px;color:var(--brass);text-decoration:none;border-bottom:1px solid currentColor}
+
+/* invite */
+.invite{background:var(--paper);border-top:1px solid var(--rule);padding:140px 0;text-align:center}
+.invite h2{font-family:var(--serif);font-weight:300;font-size:clamp(38px,5vw,70px);line-height:1.12;max-width:16ch;margin:14px auto 0}
+.invite p{color:var(--mute);margin:24px auto 0;max-width:46ch}
+.cta-row{margin-top:48px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;font-family:var(--sans);font-weight:500;font-size:16px;letter-spacing:.04em;text-decoration:none;padding:18px 40px;background:var(--forest);color:var(--ivory);transition:background .3s}
+.btn:hover{background:var(--forest-2)}
+.link{font-size:16px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:3px;transition:border-color .3s}
+.link:hover{border-color:var(--ink)}
+
+footer{padding:36px 0 44px;border-top:1px solid var(--rule)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--mute)}
+footer .marks img.dn{height:22px}
+footer .marks img.bk{height:36px}
+footer .marks{gap:18px}
+footer .marks .rule{height:28px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity 1.4s cubic-bezier(.16,.8,.2,1),transform 1.4s cubic-bezier(.16,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.frame img{transform:none;transition:none}}
+
+@media (max-width:820px){
+  body{font-size:17px}
+  .marks{gap:18px}.marks img.dn{height:26px}.marks img.bk{height:44px}.marks .rule{height:34px}
+  .hero{padding-top:60px}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-grid .frame{aspect-ratio:4/5}
+  .caption{flex-direction:column;gap:2px}
+  .intro{padding:96px 0 84px}
+  .intro .wrap,.details .head{grid-template-columns:1fr;gap:24px}
+  .label{max-width:140px}
+  .menu{padding:96px 0}
+  .courses li{grid-template-columns:54px 1fr;gap:14px}
+  .diptych{padding-top:96px}
+  .diptych .wrap{grid-template-columns:1fr;gap:56px}
+  .ph.mid{margin-bottom:0}
+  .quote{padding:110px 0}
+  .details{padding-bottom:96px}
+  .grid3{grid-template-columns:1fr}
+  .grid3 div,.grid3 div:not(:nth-child(3n)){border-left:0;padding:24px 0}
+  .band{height:56vh}
+  .hosts{padding:100px 0}
+  .pair{grid-template-columns:1fr;gap:56px}
+  .pair .sep{height:1px;width:120px;margin-inline:auto}
+  .invite{padding:100px 0}
+  .btn{width:100%}
+}
+
+/* phone polish + Hebrew-friendly label spacing */
+.overline{letter-spacing:.04em}
+.label{letter-spacing:.04em}
+.latin{letter-spacing:.04em}
+@media (max-width:820px){
+  h1{font-size:52px}
+  .hero p.sub{font-size:17px}
+  .intro h2,.details h2{font-size:28px}
+  .menu h2{font-size:38px}
+  .courses b{font-size:21px}
+  .quote blockquote{font-size:28px}
+  .host .logo{height:76px}
+  .invite h2{font-size:36px}
+}
+
+/* readability: heavier, larger, darker text */
+:root{--mute:#45473f}
+body{font-weight:400;font-size:20px;color:#1d2019}
+h1{font-weight:400}
+.intro h2,.details h2,.menu h2,.hosts h2,.invite h2,.quote blockquote{font-weight:400}
+.hero p.sub{font-size:21px;color:var(--mute)}
+.intro p{font-size:19px}
+.overline,.label{font-size:15px;font-weight:600}
+.caption,figcaption{font-size:15px;color:var(--mute)}
+.courses b{font-weight:500;font-size:25px}
+.courses span{font-size:18px;color:rgba(246,242,234,.88)}
+.menu .note{font-size:16px;color:rgba(246,242,234,.8)}
+.grid3 b{font-weight:500;font-size:22px}
+.grid3 span{font-size:18px}
+.host h3{font-weight:500;font-size:26px}
+.host p{font-size:18px}
+.invite p{font-size:19px}
+.btn{font-weight:600;font-size:18px}
+.link{font-weight:500;font-size:17px}
+footer .wrap{font-size:15px}
+@media (max-width:820px){
+  body{font-size:18px}
+  h1{font-size:54px}
+  .hero p.sub{font-size:19px}
+  .intro h2,.details h2{font-size:29px}
+  .quote blockquote{font-size:29px}
+  .invite h2{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="marks">
+      <img class="bk" src="img/logo-biking.png" alt="BIKING">
+      <span class="rule"></span>
+      <img class="dn" src="img/logo-dinamo.png" alt="DINAMO">
+    </div>
+    <div class="rule-h"></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="overline rv">יום פרטי בטבע</div>
+        <h1 class="rv d1">יום אחד,<br>מחוץ לזמן.</h1>
+        <p class="sub rv d2">יום גיבוש פרטי על אופניים, שנתפר במיוחד לצוות שלכם. מסלול, הדרכה, ציוד וליווי, כולם ברמה של הפרטים הקטנים.</p>
+      </div>
+      <figure>
+        <div class="frame rv"><img src="img/d-fields.jpg" alt="רוכבים בשביל בין שדה ירוק ליער אורנים" fetchpriority="high"></div>
+        <figcaption class="caption"><span>בין השדות והיער, צוות הייטק בדרך</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="intro">
+    <div class="wrap">
+      <div class="label rv">הרעיון</div>
+      <div>
+        <h2 class="rv d1">הצוות שלכם עובד ברמה הגבוהה ביותר. מגיע לו יום שנבנה באותה רמה.</h2>
+        <p class="rv d2">אנחנו מתכננים כל יום מאפס: בוחרים מסלול לפי הצוות, מכינים את האופניים ואת הציוד, ומובילים את הקבוצה בקצב שמתאים לכולם. לכם נשאר רק ליהנות מהשקט, מהנוף ומהאנשים שעובדים לצדכם.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu">
+    <div class="menu-card">
+      <div class="overline rv">מהלך היום</div>
+      <h2 class="rv d1">תפריט היום</h2>
+      <p class="note rv d2">יום לדוגמה. כל יום נתפר מחדש לפי הצוות.</p>
+      <ol class="courses">
+        <li class="rv"><span class="n">01</span><div><b>קבלת פנים</b><span>התכנסות, התאמת אופניים וקסדות לכל משתתף, ותדריך קצר.</span></div></li>
+        <li class="rv"><span class="n">02</span><div><b>בין הכרמים</b><span>מקטע רכיבה ראשון ונינוח, כדי שכולם ימצאו את הקצב.</span></div></li>
+        <li class="rv"><span class="n">03</span><div><b>אתגר הצוות</b><span>משימה משותפת בשטח שמגלה מי מוביל, מי מקשיב ומי מצחיק.</span></div></li>
+        <li class="rv"><span class="n">04</span><div><b>שביל היער</b><span>מקטע שני בין עצים ותצפיות, ורכב שטח מלווה לאורך כל הדרך.</span></div></li>
+        <li class="rv"><span class="n">05</span><div><b>נקודת התצפית</b><span>עצירה מול הנוף וסגירת מעגל לפני החזרה.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="diptych">
+    <div class="wrap">
+      <figure class="rv"><div class="ph tall"><img src="img/d-smile.jpg" alt="רוכבת מחייכת חיוך רחב" loading="lazy"></div><figcaption><span class="latin">ביחד</span> אתגר החישוק: כולם צוחקים, ואף אחד לא מוותר.</figcaption></figure>
+      <figure class="rv d2"><div class="ph mid"><video class="vid" src="img/hoop.mp4" poster="img/hoop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון מיום הגיבוש"></video></div><figcaption><span class="latin">ביחד</span> אתגר החישוק: כולם צוחקים, ואף אחד לא מוותר.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="quote">
+    <div class="narrow">
+      <span class="orn rv"></span>
+      <blockquote class="rv d1">הדברים הטובים באמת קורים כשמכבים את המסך ומדליקים את הדרך.</blockquote>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="wrap">
+      <div class="head">
+        <div class="label rv">הפרטים</div>
+        <h2 class="rv d1">כל מה שצריך כבר מחכה לכם בשטח.</h2>
+      </div>
+      <div class="grid3">
+        <div class="rv"><b>מסלול תפור לצוות</b><span>אורך, קושי ואזור לפי הקבוצה, בכל רחבי הארץ.</span></div>
+        <div class="rv d1"><b>הדרכה מוסמכת</b><span>מדריכת רכיבת הרים מקצועית ומורת דרך מוסמכת.</span></div>
+        <div class="rv d2"><b>אופניים וציוד</b><span>אופניים מכוילים, קסדות וציוד לכל משתתף.</span></div>
+        <div class="rv"><b>רכב שטח מלווה</b><span>ליווי צמוד, ציוד ביטחון ועזרה ראשונה.</span></div>
+        <div class="rv d1"><b>אתגרי צוות</b><span>פעילויות גיבוש שמשתלבות בתוך הרכיבה.</span></div>
+        <div class="rv d2"><b>לכל צוות</b><span>מותאם לכל רמה ולכל גיל, גם לציבור הדתי והחרדי.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band"><img src="img/d-wide.jpg" alt="רוכבים בשביל לאורך שדה ירוק ויער" loading="lazy"></div>
+
+  <section class="hosts">
+    <div class="wrap">
+      <div class="head">
+        <div class="overline rv">המארחים</div>
+        <h2 class="rv d1">המארחים שלכם</h2>
+      </div>
+      <div class="pair">
+        <div class="host rv">
+          <div class="logo"><img class="dn" src="img/logo-dinamo.png" alt="DINAMO"></div>
+          <h3>דינה גבאי</h3>
+          <p>מדריכת רכיבת הרים מקצועית ומורת דרך מוסמכת. מובילה קבוצות, סיורי רכיבה ומסגרות הדרכה, ויודעת להפוך צוות שלם לקבוצה אחת על השביל.</p>
+        </div>
+        <div class="sep"></div>
+        <div class="host rv d2">
+          <div class="logo"><img class="bk" src="img/logo-biking.png" alt="BIKING"></div>
+          <h3>אוהד</h3>
+          <p>מרכז לרכיבת אופניים לקבוצות, מוסדות וחברות: אופניים, רכב שטח וציוד ביטחון. אוהד הוא גם מילואימניק עם יותר מ-600 ימי שירות מאז 7.10.</p>
+          <a href="https://goodbiking.co.il/" target="_blank" rel="noopener">goodbiking.co.il</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="invite" id="plan">
+    <div class="wrap">
+      <div class="overline rv">בהזמנה אישית</div>
+      <h2 class="rv d1">נשמח לתפור את היום של הצוות שלכם.</h2>
+      <p class="rv d2">ספרו לנו על הצוות ועל התאריך שאתם מכוונים אליו, ונחזור אליכם עם הצעה אישית.</p>
+      <p class="rv d2" style="margin-top:12px;color:var(--brass);font-weight:400">אפשר להוסיף בסוף הפעילות פריסת אוכל, מותאמת לתקציב החברה.</p>
+      <div class="cta-row rv d3">
+        <a class="btn" href="https://did.li/J1dmC" target="_blank" rel="noopener">לתיאום עם אוהד בוואטסאפ</a>
+        <a class="link" href="https://wa.me/972585903093?text=%D7%94%D7%99%D7%99%20%D7%93%D7%99%D7%A0%D7%94%2C%20%D7%90%D7%A0%D7%97%D7%A0%D7%95%20%D7%A8%D7%95%D7%A6%D7%99%D7%9D%20%D7%9C%D7%AA%D7%9B%D7%A0%D7%9F%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%A2%D7%9C%20%D7%90%D7%95%D7%A4%D7%A0%D7%99%D7%99%D7%9D%20%D7%9C%D7%A6%D7%95%D7%95%D7%AA%20%D7%A9%D7%9C%D7%A0%D7%95.%20%D7%92%D7%95%D7%93%D7%9C%20%D7%94%D7%A6%D7%95%D7%95%D7%AA%3A%20%20%D7%AA%D7%90%D7%A8%D7%99%D7%9A%3A%20" target="_blank" rel="noopener">או לשיחה עם דינה</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="marks">
+      <img class="bk" src="img/logo-biking.png" alt="BIKING">
+      <span class="rule"></span>
+      <img class="dn" src="img/logo-dinamo.png" alt="DINAMO">
+    </div>
+    <span>ימי גיבוש פרטיים על אופניים · בכל רחבי הארץ</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.06});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>

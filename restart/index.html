@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ריסטארט לצוות — יום גיבוש על אופניים | DINAMO × BIKING</title>
+<meta name="description" content="יום גיבוש על אופניים לצוותי הייטק: רכיבה, אתגרי צוות ונוף. מסלול, אופניים, ציוד, מדריכים ורכב שטח — עלינו.">
+<meta property="og:title" content="ריסטארט לצוות. על אופניים.">
+<meta property="og:image" content="img/d-hoop.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@700&family=IBM+Plex+Sans+Hebrew:wght@400;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0b0b0c;
+  --coal:#17171a;
+  --white:#fafaf7;
+  --orange:#e4611e;
+  --amber:#e3a21a;
+  --lime:#d2d61e;
+  --blue:#1f78c1;
+  --grad:linear-gradient(90deg,var(--lime),var(--amber) 45%,var(--orange));
+  --display:"Karantina", "IBM Plex Sans Hebrew", sans-serif;
+  --body:"IBM Plex Sans Hebrew", system-ui, sans-serif;
+  --mono:"Space Mono", ui-monospace, monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+main{overflow-x:clip}
+
+/* top */
+.top{position:absolute;inset:0 0 auto;z-index:10;padding:18px 0}
+.top .wrap{display:flex;justify-content:space-between;align-items:center}
+.plate{display:flex;align-items:center;gap:14px;background:var(--white);padding:8px 16px;border-radius:12px}
+.plate img.dn{height:30px;width:auto}
+.plate img.bk{height:46px;width:auto}
+.plate i{width:2px;height:30px;background:var(--grad);border-radius:2px}
+.top a.go{font-weight:700;font-size:15px;text-decoration:none;color:var(--black);background:var(--white);padding:10px 18px;border-radius:999px;transition:transform .15s}
+.top a.go:active{transform:scale(.96)}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero > img,.hero > video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(11,11,12,.95) 0%,rgba(11,11,12,.55) 38%,rgba(11,11,12,.05) 70%)}
+.hero .wrap{padding-bottom:64px}
+.boot{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:13px;direction:ltr;justify-content:flex-end;color:rgba(250,250,247,.85)}
+.bar{width:180px;height:6px;background:rgba(250,250,247,.18);border-radius:6px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--grad);border-radius:6px;transition:width .1s linear}
+h1{font-family:var(--display);font-weight:700;line-height:.82;margin-top:14px}
+h1 .big{display:block;font-size:clamp(120px,24vw,340px);letter-spacing:-.01em}
+h1 .big .word{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-inline:.04em}
+h1 .line{display:block;font-size:clamp(46px,7vw,104px);margin-top:6px}
+.word{display:inline-block;opacity:0;transform:translateY(40%) skewY(6deg);animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.hero p{margin-top:22px;max-width:46ch;font-size:clamp(18px,1.6vw,21px);color:rgba(250,250,247,.86)}
+.cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:18px;text-decoration:none;padding:17px 30px;border-radius:14px;transition:transform .15s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-hot{background:var(--grad);color:var(--black);box-shadow:0 14px 34px -12px rgba(228,97,30,.75)}
+.btn-hot:hover{transform:translateY(-2px)}
+.btn-line{border:2px solid rgba(250,250,247,.5);color:var(--white)}
+.btn-line:hover{border-color:var(--white)}
+.btn svg{width:20px;height:20px}
+
+/* marquee */
+.ticker{background:var(--grad);color:var(--black);overflow:hidden;padding:14px 0;transform:rotate(-1.6deg);margin:-10px -20px 0;position:relative;z-index:3}
+.track{display:flex;width:max-content;animation:run 26s linear infinite}
+.track span{font-family:var(--display);font-size:clamp(44px,5vw,64px);line-height:1;padding-inline:22px;white-space:nowrap}
+.track b{font-family:var(--mono);font-size:22px;align-self:center}
+@keyframes run{to{transform:translateX(50%)}}
+
+/* strip */
+.strip{padding:130px 0 110px;overflow:hidden}
+.strip .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+h2{font-family:var(--display);font-weight:700;font-size:clamp(58px,8vw,118px);line-height:.88}
+h2 em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.strip .head p{max-width:34ch;color:rgba(250,250,247,.7)}
+.reel{margin-top:60px;display:flex;gap:22px;padding-inline:max(16px,calc((100vw - 1240px)/2));will-change:transform}
+.card{flex:none;width:clamp(240px,24vw,330px);aspect-ratio:3/4;border-radius:18px;overflow:hidden;position:relative;transform:rotate(var(--r,0deg));transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover{transform:rotate(0) scale(1.03)}
+.card img,.card video{width:100%;height:100%;object-fit:cover;display:block}
+.card figcaption{position:absolute;inset:auto 0 0 0;padding:40px 16px 14px;background:linear-gradient(0deg,rgba(11,11,12,.85),transparent);font-family:var(--display);font-size:40px;line-height:1}
+.card:nth-child(odd){--r:-2.5deg}
+.card:nth-child(even){--r:2deg;margin-top:40px}
+
+/* specs */
+.specs{padding:40px 0 130px}
+.tiles{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{background:var(--coal);border-radius:18px;padding:28px 26px;position:relative;overflow:hidden;min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.tile::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad);transform:scaleX(0);transform-origin:right;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.tile.in::before{transform:scaleX(1)}
+.tile .k{font-family:var(--mono);font-size:12px;color:var(--amber);direction:ltr;text-align:right}
+.tile b{display:block;font-family:var(--display);font-size:52px;line-height:.95;margin-top:18px}
+.tile span{display:block;color:rgba(250,250,247,.66);font-size:16px;margin-top:8px}
+.tile.photo{padding:0;grid-row:span 2}
+.tile.photo img{width:100%;height:100%;object-fit:cover;object-position:28% 50%}
+
+/* duo */
+.duo{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.side{padding:80px 56px;display:flex;flex-direction:column;gap:20px}
+.side.dn{background:var(--blue)}
+.side.bk{background:linear-gradient(135deg,var(--orange),var(--amber))}
+.side .lg{background:var(--white);border-radius:16px;padding:16px 22px;align-self:flex-start;display:flex;align-items:center;height:104px}
+.side .lg img{height:100%;width:auto}
+.side.dn .lg img{height:46px}
+.side h3{font-family:var(--display);font-size:clamp(52px,5vw,76px);line-height:.9;margin-top:12px}
+.side p{max-width:42ch;font-size:18px}
+.side.bk{color:var(--black)}
+.side.bk a{font-weight:700;margin-top:auto}
+.side .chip{margin-top:auto;font-family:var(--mono);font-size:12px;direction:ltr;text-align:right;opacity:.85}
+
+/* final */
+.final{position:relative;padding:150px 0 120px;text-align:center;overflow:hidden;isolation:isolate}
+.final > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:-2;opacity:.42}
+.final::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 50%,rgba(11,11,12,.2),var(--black) 78%)}
+.final h2{font-size:clamp(90px,15vw,220px)}
+.final p{margin:20px auto 0;max-width:40ch;color:rgba(250,250,247,.82);font-size:20px}
+.final .cta{justify-content:center;margin-top:36px}
+
+footer{padding:30px 0 40px;border-top:1px solid rgba(250,250,247,.1)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:14px;color:rgba(250,250,247,.55)}
+footer .plate img.dn{height:22px}
+footer .plate img.bk{height:34px}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+
+@media (prefers-reduced-motion:reduce){
+  .word{animation:none;opacity:1;transform:none}
+  .track{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .tile::before{transform:none;transition:none}
+}
+
+@media (max-width:860px){
+  body{font-size:17px}
+  .plate{gap:10px;padding:6px 12px}
+  .plate img.dn{height:22px}.plate img.bk{height:36px}.plate i{height:24px}
+  .top a.go{display:none}
+  .hero .wrap{padding-bottom:44px}
+  .bar{width:120px}
+  .btn{width:100%}
+  .strip{padding:100px 0 80px}
+  .reel{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .reel::-webkit-scrollbar{display:none}
+  .card{width:72vw;scroll-snap-align:center}
+  .card:nth-child(even){margin-top:24px}
+  .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  .tile{padding:20px 16px;min-height:160px}
+  .tile b{font-size:40px}
+  .tile.photo{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+  .duo{grid-template-columns:1fr}
+  .side{padding:56px 22px}
+  .final{padding:110px 0 90px}
+}
+
+/* phone polish */
+@media (max-width:860px){
+  .hero::after{background:linear-gradient(0deg,rgba(11,11,12,.97) 0%,rgba(11,11,12,.85) 42%,rgba(11,11,12,.35) 70%,rgba(11,11,12,.25) 100%)}
+  .boot{font-size:11px;gap:8px}
+  .tiles{grid-template-columns:1fr}
+  .tile{min-height:0;flex-direction:row;align-items:flex-start;gap:16px;padding:20px 18px}
+  .tile .k{flex:none;width:72px;padding-top:6px}
+  .tile b{font-size:38px;margin-top:0}
+  .tile.photo{aspect-ratio:4/3}
+  .side h3{font-size:56px}
+  .final h2{font-size:84px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="plate" aria-label="BIKING × DINAMO">
+      <img class="bk" src="img/logo-biking.png" alt="BIKING">
+      <i></i>
+      <img class="dn" src="img/logo-dinamo.png" alt="DINAMO">
+    </div>
+    <a class="go" href="#go">יאללה, מתאמים</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <video class="vid hero-vid" src="img/hoop.mp4" poster="img/hoop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון מיום הגיבוש"></video>
+    <div class="wrap">
+      <div class="boot" aria-hidden="true"><span id="pct">0%</span><span class="bar"><span id="bar"></span></span><span>team.restart()</span></div>
+      <h1>
+        <span class="big"><span class="word">ריסטארט</span></span>
+        <span class="line"><span class="word" style="animation-delay:.25s">לצוות.</span> <span class="word" style="animation-delay:.38s">על</span> <span class="word" style="animation-delay:.48s">אופניים.</span></span>
+      </h1>
+      <p class="rv d2">יום גיבוש שמשלב רכיבה, אתגרי צוות בשטח והרבה נוף. אתם מביאים את הצוות, ואנחנו את כל השאר.</p>
+      <div class="cta rv d2">
+        <a class="btn btn-hot" href="#go">בואו נתאם יום
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        </a>
+        <a class="btn btn-line" href="#reel">מה עושים שם?</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>רוכבים</span><b>●</b><span>צוחקים</span><b>●</b><span>פותרים ביחד</span><b>●</b><span>עולים</span><b>●</b><span>גולשים</span><b>●</b><span>נושמים</span><b>●</b><span>חוזרים מגובשים</span><b>●</b>
+      <span>רוכבים</span><b>●</b><span>צוחקים</span><b>●</b><span>פותרים ביחד</span><b>●</b><span>עולים</span><b>●</b><span>גולשים</span><b>●</b><span>נושמים</span><b>●</b><span>חוזרים מגובשים</span><b>●</b>
+    </div>
+  </div>
+
+  <section class="strip" id="reel">
+    <div class="wrap head">
+      <h2 class="rv">יום אחד.<br><em>אפס שגרה.</em></h2>
+      <p class="rv d1">מסלול שנבנה לפי הצוות, אתגרים בין המקטעים ונוף שמחליף כל חדר ישיבות. רואים את זה הכי טוב בתמונות:</p>
+    </div>
+    <div class="reel" id="track">
+      <figure class="card"><img src="img/d-selfie.jpg" alt="רוכב מחייך בסלפי, הקבוצה מאחוריו" loading="lazy"><figcaption>יוצאים</figcaption></figure>
+      <figure class="card"><img src="img/d-ridge.jpg" alt="שורת רוכבים על רכס" loading="lazy"><figcaption>רוכבים</figcaption></figure>
+      <figure class="card"><img src="img/d-hoop.jpg" alt="אתגר חישוק צוותי" loading="lazy"><figcaption>פותרים</figcaption></figure>
+      <figure class="card"><video class="vid" src="img/trail.mp4" poster="img/trail-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון מיום הגיבוש"></video><figcaption>ממשיכים</figcaption></figure>
+      <figure class="card"><img src="img/d-smile.jpg" alt="רוכבת מחייכת על השביל" loading="lazy"><figcaption>צוחקים</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="specs">
+    <div class="wrap">
+      <h2 class="rv">הכל <em>כלול.</em></h2>
+      <div class="tiles">
+        <div class="tile rv"><span class="k">level</span><div><b>כל רמה</b><span>מסלול שנבנה לפי הצוות, מהרוכב הוותיק ועד מי שמתחיל.</span></div></div>
+        <div class="tile rv d1"><span class="k">location</span><div><b>כל הארץ</b><span>כרמים, יערות ושבילים קרוב אליכם.</span></div></div>
+        <div class="tile photo rv d2"><img src="img/d-wide.jpg" alt="רוכבים מחייכים בשביל לאורך שדה ירוק ויער" loading="lazy"></div>
+        <div class="tile rv"><span class="k">gear</span><div><b>הציוד עלינו</b><span>אופניים, קסדות וציוד ביטחון לכל משתתף.</span></div></div>
+        <div class="tile rv d1"><span class="k">crew</span><div><b>מדריכים + רכב שטח</b><span>הדרכה מוסמכת וליווי צמוד לאורך כל המסלול.</span></div></div>
+        <div class="tile rv"><span class="k">team</span><div><b>אתגרי צוות</b><span>פעילויות גיבוש שמשולבות בתוך הרכיבה.</span></div></div>
+        <div class="tile rv d1"><span class="k">everyone</span><div><b>לכל צוות</b><span>מותאם לכל גיל, גם לציבור הדתי והחרדי.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="duo">
+    <div class="side dn rv">
+      <div class="lg"><img src="img/logo-dinamo.png" alt="DINAMO"></div>
+      <h3>דינה גבאי</h3>
+      <p>מדריכת רכיבת הרים מקצועית ומורת דרך מוסמכת. מובילה קבוצות, סיורים ומסגרות הדרכה, ויודעת להוציא מכל צוות את האנרגיה הכי טובה שלו.</p>
+      <span class="chip">ride.together</span>
+    </div>
+    <div class="side bk rv d1">
+      <div class="lg"><img src="img/logo-biking.png" alt="BIKING"></div>
+      <h3>אוהד</h3>
+      <p>מרכז לרכיבת אופניים לקבוצות וחברות, עם אופניים, רכב שטח וציוד ביטחון. מאז 7.10 אוהד גם מילואימניק עם יותר מ-600 ימי שירות, כך שיום גיבוש איתנו מחזק גם עסק של מילואימניק.</p>
+      <a href="https://goodbiking.co.il/" target="_blank" rel="noopener">goodbiking.co.il ↗</a>
+    </div>
+  </section>
+
+  <section class="final" id="go">
+    <img src="img/d-clouds.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <h2 class="rv">יאללה,<br><em>יוצאים.</em></h2>
+      <p class="rv d1">שלחו תאריך וגודל צוות, ונחזור אליכם עם מסלול, לוח זמנים ומחיר.</p>
+      <p class="rv d1" style="margin-top:10px;font-weight:700;color:var(--amber)">אפשר להוסיף בסוף הפעילות פריסת אוכל, מותאמת לתקציב החברה.</p>
+      <div class="cta rv d2">
+        <a class="btn btn-hot" href="https://wa.me/972585903093?text=%D7%94%D7%99%D7%99%20%D7%93%D7%99%D7%A0%D7%94%2C%20%D7%90%D7%A0%D7%97%D7%A0%D7%95%20%D7%A8%D7%95%D7%A6%D7%99%D7%9D%20%D7%9C%D7%AA%D7%9B%D7%A0%D7%9F%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%A2%D7%9C%20%D7%90%D7%95%D7%A4%D7%A0%D7%99%D7%99%D7%9D%20%D7%9C%D7%A6%D7%95%D7%95%D7%AA%20%D7%A9%D7%9C%D7%A0%D7%95.%20%D7%92%D7%95%D7%93%D7%9C%20%D7%94%D7%A6%D7%95%D7%95%D7%AA%3A%20%20%D7%AA%D7%90%D7%A8%D7%99%D7%9A%3A%20" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+          וואטסאפ לדינה
+        </a>
+        <a class="btn btn-line" href="https://did.li/J1dmC" target="_blank" rel="noopener">וואטסאפ לאוהד</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="plate"><img class="bk" src="img/logo-biking.png" alt="BIKING"><i></i><img class="dn" src="img/logo-dinamo.png" alt="DINAMO"></div>
+    <span>ימי גיבוש על אופניים לחברות · בכל הארץ</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // boot bar
+  var bar=document.getElementById('bar'),pct=document.getElementById('pct'),v=reduce?100:0;
+  function tick(){v=Math.min(100,v+Math.max(1,(100-v)*.06));bar.style.width=v+'%';pct.textContent=Math.round(v)+'%';if(v<100)requestAnimationFrame(tick)}
+  setTimeout(tick,500);
+  // reveal
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.1});
+    els.forEach(function(e){io.observe(e)});
+  } else els.forEach(function(e){e.classList.add('in')});
+  // reel drifts with scroll on wide screens
+  var track=document.getElementById('track');
+  if(!reduce && window.matchMedia('(min-width:861px)').matches){
+    var ticking=false;
+    window.addEventListener('scroll',function(){
+      if(ticking)return;ticking=true;
+      requestAnimationFrame(function(){
+        var r=track.getBoundingClientRect(),p=(innerHeight-r.top)/(innerHeight+r.height);
+        p=Math.max(0,Math.min(1,p));track.style.transform='translateX('+(p*-220+110)+'px)';ticking=false;
+      });
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
