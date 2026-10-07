@@ -80,11 +80,11 @@ h1{font-family:var(--serif);font-weight:200;font-size:clamp(46px,7.2vw,104px);li
 .reel .head{margin-bottom:54px}
 .reel h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,46px);line-height:1.25;max-width:22ch}
 .swipe{display:none;margin-top:18px;font-size:13px;letter-spacing:.14em;color:var(--brass)}
-.reel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.reel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .shot figure{margin:0;overflow:hidden;background:var(--stone);aspect-ratio:4/5}
 .shot img,.shot video{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .shot:hover img,.shot:hover video{transform:scale(1.04)}
-.shot:nth-child(2){margin-top:64px}
+.shot:nth-child(even){margin-top:64px}
 .ph{overflow:hidden;background:var(--stone)}
 .ph img,.ph video{width:100%;height:100%;object-fit:cover;display:block}
 figcaption{margin-top:14px;font-size:14px;color:var(--mute)}
@@ -187,7 +187,7 @@ footer .marks .rule{height:28px}
              margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .reel-grid::-webkit-scrollbar{display:none}
   .shot{flex:0 0 82%;scroll-snap-align:center}
-  .shot:nth-child(2){margin-top:0}
+  .shot:nth-child(even){margin-top:0}
   .hero p.sub{font-size:17px}
   .intro h2,.details h2{font-size:28px}
   .menu h2{font-size:38px}
@@ -289,7 +289,7 @@ h1{font-weight:500}
     <div class="wrap">
       <div class="head">
         <div class="label rv">רגעים מהיום</div>
-        <h2 class="rv d1">שלושה רגעים שקורים כשצוות יוצא לשטח.</h2>
+        <h2 class="rv d1">ארבעה רגעים שקורים כשצוות יוצא לשטח.</h2>
         <p class="swipe rv d2">החליקו לצד ←</p>
       </div>
       <div class="reel-grid">
@@ -304,6 +304,10 @@ h1{font-weight:500}
         <article class="shot rv d2">
           <figure><img src="img/d-wide.jpg" alt="רוכבים בשביל לאורך שדה ירוק ויער" loading="lazy"></figure>
           <figcaption><span class="latin">נוף</span> שבילים פתוחים בין שדה ליער, עד נקודת התצפית.</figcaption>
+        </article>
+        <article class="shot rv d3">
+          <figure><video class="vid" src="img/trail.mp4" poster="img/trail-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="סרטון של הצוות רוכב בשביל"></video></figure>
+          <figcaption><span class="latin">בתנועה</span> כל הצוות על השביל, בקצב אחד.</figcaption>
         </article>
       </div>
     </div>
