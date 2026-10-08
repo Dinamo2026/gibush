@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>השוואה · יום מחוץ לזמן</title>
+<style>
+:root{--bg:#e9ebef;--ink:#12203e;--mute:#5a6378;--grad:linear-gradient(90deg,#d2d61e,#e3a21a 45%,#e4611e)}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;display:flex;flex-direction:column}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:#fff;border-bottom:1px solid #d6d9e0}
+h1{font-size:18px}
+.modes{display:flex;gap:6px;background:#eef0f4;padding:4px;border-radius:999px}
+.modes button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mute);cursor:pointer}
+.modes button.on{background:var(--ink);color:#fff}
+main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px;min-height:0}
+.col{display:flex;flex-direction:column;gap:10px;min-height:0;min-width:0}
+.col h2{font-size:16px;display:flex;align-items:center;gap:10px}
+.col h2 i{width:34px;height:10px;border-radius:5px;display:inline-block}
+.frame{flex:1;min-height:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px -18px rgba(18,32,62,.5);position:relative}
+.frame iframe{border:0;position:absolute;top:0;right:0;transform-origin:top right;background:#fff}
+</style>
+</head>
+<body>
+<header>
+  <h1>יום מחוץ לזמן · השוואה בין שתי האפשרויות</h1>
+  <div class="modes" role="group" aria-label="תצוגה">
+    <button type="button" class="on" data-w="1440">מחשב</button>
+    <button type="button" data-w="390">טלפון</button>
+  </div>
+</header>
+<main>
+  <section class="col">
+    <h2><i style="background:#f6f2ea;border:1px solid #9a7838"></i>האפשרות הקודמת · שנהב וזהב</h2>
+    <div class="frame"><iframe src="ivory.html" title="שנהב וזהב"></iframe></div>
+  </section>
+  <section class="col">
+    <h2><i style="background:var(--grad)"></i>צבעי הלוגואים · דינמו ו-BIKING</h2>
+    <div class="frame"><iframe src="index.html" title="צבעי הלוגואים"></iframe></div>
+  </section>
+</main>
+<script>
+(function(){
+  var w=1440;
+  function fit(){
+    document.querySelectorAll('.frame').forEach(function(box){
+      var f=box.querySelector('iframe'), s=Math.min(1,box.clientWidth/w);
+      f.style.width=w+'px'; f.style.height=(box.clientHeight/s)+'px'; f.style.transform='scale('+s+')';
+      if(w<600){ f.style.right=((box.clientWidth-w*s)/2)+'px'; } else { f.style.right='0'; }
+    });
+  }
+  document.querySelectorAll('.modes button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.modes button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on'); w=+b.dataset.w; fit();
+    });
+  });
+  window.addEventListener('resize',fit); fit();
+})();
+</script>
+</body>
+</html>
