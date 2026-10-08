@@ -65,13 +65,13 @@ h1{font-family:var(--serif);font-weight:200;font-size:clamp(46px,7.2vw,104px);li
 /* menu */
 .menu{background:var(--forest);color:var(--ivory);padding:130px 0}
 .menu-card{width:min(640px,100% - 32px);margin-inline:auto;text-align:center}
-.menu .overline{color:#c9a965}
+.menu .overline{color:var(--amber)}
 .menu h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,4.4vw,58px);margin-top:10px}
 .menu .note{font-size:14px;color:rgba(246,242,234,.6);margin-top:10px}
 .courses{list-style:none;margin-top:64px;text-align:right}
 .courses li{padding:26px 0;border-top:1px solid rgba(246,242,234,.16);display:grid;grid-template-columns:72px 1fr;gap:20px}
 .courses li:last-child{border-bottom:1px solid rgba(246,242,234,.16)}
-.courses .n{font-size:15px;font-weight:500;letter-spacing:.1em;padding-top:6px;color:#c9a965;line-height:1.2}
+.courses .n{font-size:15px;font-weight:500;letter-spacing:.1em;padding-top:6px;color:var(--amber);line-height:1.2}
 .courses b{display:block;font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.3}
 .courses span{display:block;font-size:16px;color:rgba(246,242,234,.68);margin-top:4px}
 
@@ -230,6 +230,48 @@ footer .wrap{font-size:15px}
 h1{font-weight:500}
 .intro h2,.details h2,.menu h2,.hosts h2,.invite h2,.quote blockquote,.reel h2{font-weight:500}
 .courses b,.grid3 b,.host h3{font-weight:500}
+
+/* ===== brand colors: DINAMO navy + blue, BIKING orange→yellow ===== */
+:root{
+  --ivory:#fbfaf7;
+  --stone:#e9edf4;
+  --paper:#f3f5f9;
+  --forest:#12203e;      /* DINAMO navy */
+  --forest-2:#1b2d55;
+  --ink:#12203e;
+  --mute:#3d4766;
+  --brass:#c4561a;       /* BIKING orange, deepened for contrast on light */
+  --amber:#e3a21a;       /* BIKING amber */
+  --blue:#1f78c1;        /* DINAMO "mo" blue */
+  --rule:rgba(18,32,62,.14);
+  --grad:linear-gradient(90deg,#d2d61e,#e3a21a 45%,#e4611e);
+}
+body{color:#16213d;background:var(--ivory)}
+body::before{content:"";position:fixed;inset:0 0 auto 0;height:5px;background:var(--grad);z-index:50}
+.top .rule-h{height:2px;background:var(--grad);opacity:.85}
+.label{border-top:0;position:relative}
+.label::before{content:"";position:absolute;top:-1px;inset-inline:0;height:3px;background:var(--grad)}
+.quote .orn{width:72px;height:4px;border-radius:4px;background:var(--grad)}
+.menu{background:var(--forest);position:relative}
+.menu::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--grad)}
+.menu .overline{color:var(--amber)}
+.courses li{border-color:rgba(255,255,255,.14)!important}
+.latin,.overline,.swipe{color:var(--brass)}
+figcaption .latin{color:var(--blue)}
+.btn{background:var(--grad);color:var(--forest);font-weight:700;border-radius:999px;box-shadow:0 12px 28px -12px rgba(228,97,30,.6)}
+.btn:hover{background:var(--grad);filter:brightness(1.05)}
+.link{color:var(--blue);border-color:rgba(31,120,193,.35)}
+.link:hover{border-color:var(--blue)}
+.host a{color:var(--blue)}
+.pair .sep{background:linear-gradient(180deg,transparent,var(--blue),transparent);opacity:.35}
+.invite{background:var(--paper)}
+.food{margin-top:12px;color:var(--brass);font-weight:500}
+.grid3 b,.courses b{color:inherit}
+.frame,.shot figure{box-shadow:0 18px 40px -24px rgba(18,32,62,.45)}
+footer{background:var(--forest);color:rgba(255,255,255,.7);border-top:0}
+footer .wrap{color:rgba(255,255,255,.7)}
+footer .marks{background:#fff;padding:10px 18px;border-radius:12px}
+footer .marks .rule{background:rgba(18,32,62,.2)}
 </style>
 </head>
 <body>
@@ -365,7 +407,7 @@ h1{font-weight:500}
       <div class="overline rv">בהזמנה אישית</div>
       <h2 class="rv d1">נשמח לתפור את היום של הצוות שלכם.</h2>
       <p class="rv d2">ספרו לנו על הצוות ועל התאריך שאתם מכוונים אליו, ונחזור אליכם עם הצעה אישית.</p>
-      <p class="rv d2" style="margin-top:12px;color:var(--brass);font-weight:400">אפשר להוסיף בסוף הפעילות פריסת אוכל, מותאמת לתקציב החברה.</p>
+      <p class="rv d2 food">אפשר להוסיף בסוף הפעילות פריסת אוכל, מותאמת לתקציב החברה.</p>
       <div class="cta-row rv d3">
         <a class="btn" href="https://did.li/J1dmC" target="_blank" rel="noopener">לתיאום עם אוהד בוואטסאפ</a>
         <a class="link" href="https://wa.me/972585903093?text=%D7%94%D7%99%D7%99%20%D7%93%D7%99%D7%A0%D7%94%2C%20%D7%90%D7%A0%D7%97%D7%A0%D7%95%20%D7%A8%D7%95%D7%A6%D7%99%D7%9D%20%D7%9C%D7%AA%D7%9B%D7%A0%D7%9F%20%D7%99%D7%95%D7%9D%20%D7%92%D7%99%D7%91%D7%95%D7%A9%20%D7%A2%D7%9C%20%D7%90%D7%95%D7%A4%D7%A0%D7%99%D7%99%D7%9D%20%D7%9C%D7%A6%D7%95%D7%95%D7%AA%20%D7%A9%D7%9C%D7%A0%D7%95.%20%D7%92%D7%95%D7%93%D7%9C%20%D7%94%D7%A6%D7%95%D7%95%D7%AA%3A%20%20%D7%AA%D7%90%D7%A8%D7%99%D7%9A%3A%20" target="_blank" rel="noopener">או לשיחה עם דינה</a>
